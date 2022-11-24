@@ -11,7 +11,7 @@ import           CSE230.WhilePlus.Types
 
 ----------------------------------------------------------------------------------------------
 -- | A Combined monad that is BOTH 
---    (i) a WState-Transformer monad 
+--    (i) a State monad with state of type WState
 --    (ii) an Exception monad with exceptions of type Value 
 ----------------------------------------------------------------------------------------------
 type MonadWhile m = (MonadState WState m, MonadError Value m)
@@ -89,7 +89,7 @@ evalS = error "fill this in"
 --   satisfies the constraints of MonadWhile:
 --------------------------------------------------------------------------
 
-type Eval a = ExceptT Value (StateT WState (Identity)) a
+type Eval a = ExceptT Value (StateT WState Identity) a
 
 --------------------------------------------------------------------------
 -- | `runEval` implements a function to *run* the `Eval a` action from 
