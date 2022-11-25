@@ -1,4 +1,4 @@
-# 03-transformers: Transformers and Testing
+# 03-transformers: Transformers and Testing (240 points)
 
 ## Overview
 

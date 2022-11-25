@@ -151,7 +151,14 @@ isBal :: BST k v -> Bool
 isBal (Bind _ _ l r) = isBal l && isBal r && abs (height l - height r) <= 1
 isBal Emp            = True
 
--- | Write a generator for *balanced* BSTs that have a given height
+-- | Write a generator for *balanced* BSTs that have a given height.
+--   Unlike previous generators that invoked the BST's operations (insert and delete),
+--   this one is supposed to construct a BST explicitly using its constructors 
+--   (since our insertion/deletion operations do not keep the tree balanced).
+--
+--   We expect your generator to have some variety:
+--   - some trees it generates have to be non-*perfect*
+--   - some trees it generates have to be non-*full*
 genBal :: Int -> Gen (BST Int Char)
 genBal h = error "fill this in"
 
